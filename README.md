@@ -25,4 +25,6 @@ Abra `http://127.0.0.1:5000`.
 - `app/static/js/`: animação de entrada ao rolar a página.
 - `app/db.py`: conexão e inicialização do SQLite.
 
-Para publicar no Railway, use o comando `gunicorn run:app` dentro desta pasta.
+Para publicar no Railway, envie esta pasta como projeto Python. O arquivo
+`Procfile` já define `gunicorn run:app`; não há versão Python fixada, permitindo
+que o Railway escolha uma versão disponível no build atual.
