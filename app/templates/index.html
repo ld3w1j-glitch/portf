@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Washington Oliveira — design, código e imagem para projetos digitais.">
+  <title>Washington Oliveira — Criação digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/site.css') }}">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand-mark" href="#top" aria-label="Washington Oliveira, início">
+      <span class="brand-monogram">WO</span><span class="brand-slash">/</span>
+    </a>
+    <nav class="nav" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a>
+    </nav>
+    <a class="header-contact" href="#contato">Vamos conversar <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Pouso Alegre, MG <span>•</span> 2026</p>
+        <h1>Ideias que<br><em>ganham forma.</em></h1>
+        <p class="hero-intro">Design, código e imagem em conexão para criar presenças digitais com identidade.</p>
+        <a class="button button-dark" href="#projetos">Ver o trabalho <span>↓</span></a>
+      </div>
+      <div class="hero-art reveal reveal-delay" aria-label="Retrato ilustrado de Washington Oliveira">
+        <div class="orb orb-one"></div><div class="orb orb-two"></div>
+        <div class="art-label label-top">DESIGN <span>•</span> CÓDIGO <span>•</span> IMAGEM</div>
+        <img src="{{ url_for('static', filename='img/identidade.png') }}" alt="Prancha com as marcas e retrato ilustrado de Washington Oliveira">
+        <div class="art-label label-bottom">WO / 001</div>
+      </div>
+    </section>
+
+    <section class="statement section-wrap" id="sobre">
+      <div class="section-index">01 <span>/</span> SOBRE</div>
+      <div class="statement-body reveal">
+        <p class="kicker">Uma marca que acompanha o seu trabalho.</p>
+        <h2>Criação com<br><span>intenção.</span></h2>
+        <p class="statement-text">Eu transformo ideias em sistemas visuais, interfaces e narrativas que fazem sentido para quem vê e para quem usa.</p>
+      </div>
+      <div class="statement-note">O detalhe constrói<br>a percepção.</div>
+    </section>
+
+    <section class="services section-wrap" id="servicos">
+      <div class="section-index">02 <span>/</span> O QUE EU FAÇO</div>
+      <div class="services-grid">
+        <article class="service-card reveal"><span class="service-number">01</span><div><h3>Identidade visual</h3><p>Marcas consistentes, flexíveis e prontas para existir em diferentes pontos de contato.</p></div><span class="service-arrow">↗</span></article>
+        <article class="service-card reveal"><span class="service-number">02</span><div><h3>Sites & sistemas</h3><p>Experiências digitais pensadas para serem bonitas, claras e realmente úteis.</p></div><span class="service-arrow">↗</span></article>
+        <article class="service-card reveal"><span class="service-number">03</span><div><h3>Vídeo & motion</h3><p>Movimento, ritmo e direção visual para apresentar produtos, relatórios e ideias.</p></div><span class="service-arrow">↗</span></article>
+      </div>
+    </section>
+
+    <section class="projects section-wrap" id="projetos">
+      <div class="section-index">03 <span>/</span> PROJETOS</div>
+      <div class="projects-heading"><h2>Feito para<br><em>ser lembrado.</em></h2><p>Alguns caminhos que já ganharam forma.</p></div>
+      <div class="projects-list">
+        {% for project in projects %}<article class="project-row reveal"><span class="project-number">{{ project.number }}</span><div><p>{{ project.kind }}</p><h3>{{ project.title }}</h3><span class="project-description">{{ project.description }}</span></div><span class="project-link">Ver projeto <b>↗</b></span></article>{% endfor %}
+      </div>
+    </section>
+
+    <section class="contact section-wrap" id="contato">
+      <div class="contact-stamp">WO<br><small>CRIAÇÃO DIGITAL</small></div>
+      <div class="contact-copy"><p class="eyebrow">04 / CONTATO</p><h2>Vamos dar forma<br>à sua <em>ideia?</em></h2><a class="button button-light" href="mailto:contato@washingtonoliveira.com">Entrar em contato <span>↗</span></a></div>
+    </section>
+  </main>
+  <footer class="site-footer"><span>WASHINGTON OLIVEIRA</span><span>DESIGN / CÓDIGO / IMAGEM</span><span>© 2026</span></footer>
+  <script src="{{ url_for('static', filename='js/site.js') }}"></script>
+</body>
+</html>
